@@ -1,17 +1,17 @@
 ### Paweł Dinga 13972
 # Test API
+Testy są stworzone dla prostego API stworzonogego na potrzeby przedmiotu _Programowanie Aplikacji Internetowych_
 ### Cel:<br>
 Celem testów jest zweryfikowanie, czy API zwraca oczekiwane wyniki w odpowiedzi na różne żądania.<br>
 
 ### Testy:<br>
-**Test 1:**<br> 
-Sprawdzenie poprawności połączenia z API oraz zwróconych danych<br>
-Test sprawdza, czy endpoint /transaction/{id} zwraca poprawne dane transakcji na podstawie podanego order id.
+**Test 1: Sprawdzenie poprawności połączenia z API oraz zwróconych danych**<br>
+Test sprawdza, czy czy możliwe jest połączenie z API oraz czy zwraca ono poprawne dane na podstawie podanego order id.
 
-Wysyłane żądanie: GET /transaction/4
 Oczekiwana odpowiedź:
-json
-Copy code
+```
+status_code: 200
+```
 ```
   "order_id": "12345",
   "amount": "80.00",
@@ -19,52 +19,31 @@ Copy code
   "response_code": "200",
   "response_desc": "Success"
 ```
-**Test 2:** Sprawdzenie poprawności odpowiedzi dla endpointu /transaction/{id} (brak transakcji)
-Opis: Ten test sprawdza, czy endpoint /transaction/{id} zwraca odpowiedni komunikat błędu, gdy nie ma transakcji o podanym identyfikatorze.
+<br><br>
+**Test 2: Sprawdzenie poprawności odpowiedzi dla odred id podanego jako string**<br>
+Opis: Ten test sprawdza, czy API zwraca odpowiedni kod odpowiedzi, gdy jako id zostanie wprowadzony string.
 
-Wysyłane żądanie: GET /transaction/10
-Oczekiwana odpowiedź:
-json
-Copy code
-{
-  "error": "Transaction not found"
-}
-**Test 3:** Sprawdzenie poprawności odpowiedzi dla endpointu /transaction
-Opis: Ten test sprawdza, czy endpoint /transaction zwraca wszystkie transakcje.
 
-Wysyłane żądanie: GET /transaction
 Oczekiwana odpowiedź:
-json
+
 ```
-{
-  "transactions": [
-    {
-      "id": "1",
-      "order_id": "54321",
-      "amount": "120.50",
-      "order_date": "2023-05-25 14:23:11",
-      "response_code": "200",
-      "response_desc": "Success"
-    },
-    {
-      "id": "2",
-      "order_id": "98765",
-      "amount": "50.00",
-      "order_date": "2023-05-25 17:45:32",
-      "response_code": "200",
-      "response_desc": "Success"
-    },
-    ...
-  ]
-}
+status_code: 500
 ```
-Test 4: Sprawdzenie poprawności odpowiedzi dla endpointu /transaction (pusty wynik)
-Opis: Ten test sprawdza, czy endpoint /transaction zwraca pustą listę transakcji, gdy nie ma żadnych dostępnych.
+<br><br>
+**Test 3: Sprawdzenie poprawności odpowiedzi dla nieistniejącego order id** <br>
+Opis: Ten test sprawdza, czy API zwraca odpowiedne dane, gdy wprowadzone zostanie nieistniejące order id.
 
-Wysyłane żądanie: GET /transaction
+
 Oczekiwana odpowiedź:
-json
-Copy code
+```
+  null
+```
+<br><br>
+**Test 4: Sprawdzenie odpowiedzi dla niepełnej ściezki**<br>
+Opis: Ten test sprawdza, czy API zwraca odpowiedni kod odpowiedzi, gdy podana jest niepełna ścieżka.
+
+Oczekiwana odpowiedź:
+
 {
   "transactions": []
 }
