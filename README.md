@@ -43,12 +43,9 @@ Oczekiwana odpowiedź:
 Opis: Ten test sprawdza, czy API zwraca odpowiedni kod odpowiedzi, gdy podana jest niepełna ścieżka.
 
 Oczekiwana odpowiedź:
+```
+status_code: 500
+```
 
-{
-  "transactions": []
-}
-Wnioski
-Testy jednostkowe API zostały pomyślnie przeprowadzone, a wszystkie endpointy działały zgodnie z oczekiwaniami. Każdy z testów sprawdzał inną funkcjonalność i zwracał oczekiwane wyniki. Przed uruchomieniem testów upewnij się, że serwer API jest uruchomiony i dostępny pod odpowiednim adresem URL.
 
-W powyższym przykładzie przedstawiono prostą dokumentację dla testów jednostkowych API. Możesz dostosować ją do swoich potrzeb, dodając więcej informacji, takich jak autor testów, wymagania dotyczące uruchomienia, itp. Dokumentacja ta ma na celu zapewnić zrozumienie testów, instrukcje uruchomienia i wyniki oczekiwane dla każdego testu, aby ułatwić przyszłe testowanie i utrzymanie kodu.
 
