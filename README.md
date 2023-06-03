@@ -4,6 +4,9 @@ Testy są stworzone dla prostego API stworzonogego na potrzeby przedmiotu _Progr
 ### Cel:<br>
 Celem testów jest zweryfikowanie, czy API zwraca oczekiwane wyniki w odpowiedzi na różne żądania.<br>
 
+### Użyte narzędzia:<br>
+Testy są wykonane w języku python przy użyciu bibliotek unittest oraz requests.<br>
+
 ### Testy:<br>
 **Test 1: Sprawdzenie poprawności połączenia z API oraz zwróconych danych**<br>
 Test sprawdza, czy czy możliwe jest połączenie z API oraz czy zwraca ono poprawne dane na podstawie podanego order id.
