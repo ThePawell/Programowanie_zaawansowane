@@ -1,6 +1,6 @@
 ### Paweł Dinga 13972
 # Test API
-Testy są stworzone dla prostego API stworzonogego na potrzeby przedmiotu _Programowanie Aplikacji Internetowych_
+Testy są stworzone dla prostego API przygotowanego na potrzeby przedmiotu _Programowanie Aplikacji Internetowych_
 ### Cel:<br>
 Celem testów jest zweryfikowanie, czy API zwraca oczekiwane wyniki w odpowiedzi na różne żądania.<br>
 
